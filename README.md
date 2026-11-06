@@ -4,9 +4,8 @@
 
 This project refactors the Midterm **Applied Lab 1: Enterprise Income Category Ledger** (vanilla JavaScript DOM manipulation) into a modular React application built with Vite.
 
-- **Student:** _[Your full name]_ · _[Section]_
 - **Live app (Vercel):** _[paste your Vercel URL]_
-- **Repository (GitHub):** _[paste your GitHub URL]_
+- **Repository (GitHub):** https://github.com/ArtXenos
 
 ---
 
