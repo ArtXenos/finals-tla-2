@@ -4,7 +4,7 @@
 
 This project refactors the Midterm **Applied Lab 1: Enterprise Income Category Ledger** (vanilla JavaScript DOM manipulation) into a modular React application built with Vite.
 
-- **Live app (Vercel):** _[paste your Vercel URL]_
+- **Live app (Vercel):** https://income-ledger-react.vercel.app/
 - **Repository (GitHub):** https://github.com/ArtXenos
 
 ---
