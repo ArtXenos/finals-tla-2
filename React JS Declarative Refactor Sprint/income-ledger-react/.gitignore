@@ -1,0 +1,13 @@
+# Dependencies (reinstalled with `npm install`)
+node_modules/
+
+# Build output (Vercel builds this itself)
+dist/
+
+# Logs, Vercel, editor and OS files
+*.log
+.vercel
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

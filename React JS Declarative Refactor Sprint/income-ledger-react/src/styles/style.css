@@ -1,0 +1,236 @@
+/* ==========================================================
+   "Prosperity Grid" palette (60 / 30 / 10 rule)
+   60% dominant  #F4F7F5  soft mint off-white (background)
+   30% secondary #1A3636  deep forest charcoal (headers, structure)
+   10% accent    #00C897  emerald mint (save, success, counts only)
+   Text          #2C3E35  neutral dark text
+   ========================================================== */
+:root {
+  --pg-bg: #f4f7f5;
+  --pg-forest: #1a3636;
+  --pg-forest-hover: #244a4a;
+  --pg-accent: #00c897;
+  --pg-accent-hover: #00b386;
+  --pg-text: #2c3e35;
+  --pg-border: #dbe5df;
+  --pg-mint-tint: #e6f7f0;
+
+  /* Hand the palette to Bootstrap's own variables */
+  --bs-body-bg: var(--pg-bg);
+  --bs-body-color: var(--pg-text);
+  --bs-border-color: var(--pg-border);
+}
+
+/* ---------- From the Midterm stylesheet ---------- */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--pg-bg);
+  color: var(--pg-text);
+}
+
+/* Midterm had .w-35 (35%) for 2 columns; with 5 columns the name column gets 22% */
+.table th.col-name {
+  width: 22%;
+}
+
+/* Midterm used a blue focus ring; now it uses the accent color */
+.form-control:focus {
+  border-color: var(--pg-accent);
+  box-shadow: 0 0 0 0.25rem rgba(0, 200, 151, 0.18);
+}
+
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.15);
+}
+
+/* ---------- Header ---------- */
+.app-header {
+  background-color: var(--pg-forest);
+  color: #fff;
+  padding: 2rem 0 1.75rem;
+  border-bottom: 4px solid var(--pg-accent);
+}
+
+.app-eyebrow {
+  color: var(--pg-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-subtitle {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- Cards ---------- */
+.card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card-header-brand {
+  background-color: var(--pg-forest);
+  color: #fff;
+}
+
+.text-brand {
+  color: var(--pg-forest) !important;
+}
+
+/* ---------- Buttons & badge ---------- */
+/* Dark text on emerald: white on #00C897 is too low-contrast to read */
+.btn-accent {
+  --bs-btn-color: var(--pg-forest);
+  --bs-btn-bg: var(--pg-accent);
+  --bs-btn-border-color: var(--pg-accent);
+  --bs-btn-hover-color: var(--pg-forest);
+  --bs-btn-hover-bg: var(--pg-accent-hover);
+  --bs-btn-hover-border-color: var(--pg-accent-hover);
+  --bs-btn-active-color: var(--pg-forest);
+  --bs-btn-active-bg: var(--pg-accent-hover);
+  --bs-btn-active-border-color: var(--pg-accent-hover);
+  --bs-btn-focus-shadow-rgb: 0, 200, 151;
+}
+
+.btn-outline-brand {
+  --bs-btn-color: var(--pg-forest);
+  --bs-btn-border-color: var(--pg-forest);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--pg-forest);
+  --bs-btn-hover-border-color: var(--pg-forest);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--pg-forest-hover);
+  --bs-btn-active-border-color: var(--pg-forest-hover);
+  --bs-btn-focus-shadow-rgb: 26, 54, 54;
+}
+
+.badge-accent {
+  background-color: var(--pg-accent);
+  color: var(--pg-forest);
+  font-size: 0.75rem;
+}
+
+/* ---------- Table ---------- */
+.table thead th {
+  background-color: var(--pg-mint-tint);
+  color: var(--pg-forest);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid var(--pg-border);
+}
+
+.editing-row td {
+  background-color: var(--pg-mint-tint);
+  vertical-align: top;
+}
+
+.empty-row td {
+  padding: 2.5rem 1rem;
+  font-style: italic;
+}
+
+.toolbar input {
+  min-width: 14rem;
+}
+
+/* ---------- Sortable headers ---------- */
+.sort-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  white-space: nowrap;
+}
+
+.sort-button span {
+  opacity: 0.45;
+  font-size: 0.7rem;
+}
+
+.sort-button.active span {
+  opacity: 1;
+  color: var(--pg-accent-hover);
+}
+
+.sort-button:focus-visible {
+  outline: 2px solid var(--pg-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- Amounts & totals ---------- */
+.amount-cell {
+  font-variant-numeric: tabular-nums; /* digits line up in a column */
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.amount-edit-cell {
+  min-width: 9rem;
+}
+
+.total-row th,
+.total-row td {
+  background-color: var(--pg-mint-tint);
+  color: var(--pg-forest);
+  border-top: 2px solid var(--pg-border);
+  font-weight: 700;
+}
+
+/* ---------- Summary cards ---------- */
+.summary-label {
+  color: #5b6f66;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.summary-value {
+  color: var(--pg-forest);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.summary-note {
+  color: #5b6f66;
+  font-size: 0.85rem;
+}
+
+/* The main total gets the accent stripe: accent = incoming money */
+.summary-card-highlight {
+  border-left: 5px solid var(--pg-accent) !important;
+}
+
+/* ---------- Success toasts ---------- */
+.toast-success {
+  background-color: var(--pg-forest);
+  color: #fff;
+  border: 0;
+  border-left: 5px solid var(--pg-accent);
+}
+
+.toast-success .btn-close {
+  filter: invert(1) grayscale(1) brightness(2); /* white ✕ on dark background */
+}
+
+.toast-check {
+  color: var(--pg-accent);
+  font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+  .toolbar {
+    width: 100%;
+  }
+  .toolbar input {
+    min-width: 0;
+    flex: 1;
+  }
+}
